@@ -21,6 +21,69 @@ Nhân viên có thể xin nghỉ phép không lương tối đa 30 ngày mỗi n
 Cần nộp giấy xác nhận y tế trong vòng 3 ngày làm việc."""
 
 
+def test_chunkers_handle_empty_input():
+    assert chunk_semantic(" \n\t\n") == []
+    parents, children = chunk_hierarchical(" \n\t\n")
+    assert parents == []
+    assert children == []
+    assert chunk_structure_aware(" \n\t\n") == []
+
+
+def test_semantic_model_is_reused(monkeypatch):
+    import src.m1_chunking as m1
+
+    calls = []
+
+    class FakeModel:
+        def encode(self, sentences, **kwargs):
+            return [[1.0, 0.0] for _ in sentences]
+
+    def fake_constructor(model_name):
+        calls.append(model_name)
+        return FakeModel()
+
+    if hasattr(m1, "_load_semantic_model"):
+        m1._load_semantic_model.cache_clear()
+    monkeypatch.setattr("sentence_transformers.SentenceTransformer", fake_constructor)
+    try:
+        chunk_semantic("Câu thứ nhất. Câu thứ hai.")
+        chunk_semantic("Câu thứ ba. Câu thứ tư.")
+        assert calls == ["all-MiniLM-L6-v2"]
+    finally:
+        if hasattr(m1, "_load_semantic_model"):
+            m1._load_semantic_model.cache_clear()
+
+
+def test_hierarchical_splits_long_paragraph_without_data_loss():
+    text = "0123456789" * 45
+    parents, children = chunk_hierarchical(text, parent_size=100, child_size=32)
+
+    assert parents
+    assert children
+    assert all(len(parent.text) <= 100 for parent in parents)
+    assert all(len(child.text) <= 32 for child in children)
+    assert "".join(child.text for child in children) == text
+
+
+def test_structure_keeps_preamble_and_section():
+    text = "Intro text before a heading.\n\n# Policy\n\nSection content."
+    chunks = chunk_structure_aware(text)
+
+    assert "Intro text before a heading." in "\n".join(chunk.text for chunk in chunks)
+    assert any(chunk.metadata.get("section") == "# Policy" for chunk in chunks)
+    assert any("Section content." in chunk.text for chunk in chunks)
+
+
+def test_structure_does_not_split_on_headings_inside_fenced_code():
+    text = "# Intro\n\nExample:\n```markdown\n# not a section\nbody\n```\n\n## Real section\nContent."
+
+    chunks = chunk_structure_aware(text)
+
+    assert [chunk.metadata["section"] for chunk in chunks] == ["# Intro", "## Real section"]
+    assert "# not a section" in chunks[0].text
+    assert "```markdown\n# not a section\nbody\n```" in chunks[0].text
+
+
 # --- Baseline (đã implement sẵn) ---
 
 def test_basic_returns_chunks():

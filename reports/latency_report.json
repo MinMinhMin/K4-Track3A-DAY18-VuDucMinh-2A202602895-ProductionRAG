@@ -1,0 +1,214 @@
+{
+  "unit": "seconds",
+  "num_queries": 20,
+  "stages": {
+    "chunking": {
+      "total_seconds": 0.13170911999986856,
+      "mean_seconds": 0.13170911999986856
+    },
+    "enrichment": {
+      "total_seconds": 243.69601788900036,
+      "mean_seconds": 243.69601788900036
+    },
+    "indexing": {
+      "total_seconds": 22.49719293599992,
+      "mean_seconds": 22.49719293599992
+    },
+    "reranker_load": {
+      "total_seconds": 7.909065617001033,
+      "mean_seconds": 7.909065617001033
+    },
+    "retrieval": {
+      "total_seconds": 1.1218045090099622,
+      "mean_seconds": 0.05609022545049811
+    },
+    "reranking": {
+      "total_seconds": 7.170563658004539,
+      "mean_seconds": 0.358528182900227
+    },
+    "answer_generation": {
+      "total_seconds": 24.920050518001517,
+      "mean_seconds": 1.2460025259000758
+    },
+    "query_processing": {
+      "total_seconds": 41.12184550300299,
+      "mean_seconds": 2.0560922751501494
+    },
+    "ragas_evaluation": {
+      "total_seconds": 39.78997351599901,
+      "mean_seconds": 39.78997351599901
+    }
+  },
+  "per_query": [
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày khi kết hôn?",
+      "retrieval_seconds": 0.23580272199978936,
+      "reranking_seconds": 0.4215403369998967,
+      "reranker_load_seconds": 7.909065617001033,
+      "answer_generation_seconds": 1.374296233003406,
+      "query_processing_seconds": 9.94072780300121
+    },
+    {
+      "question": "Bảo hiểm sức khỏe PVI có hạn mức bao nhiêu cho nhân viên?",
+      "retrieval_seconds": 0.08597594700040645,
+      "reranking_seconds": 0.47638138799811713,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.1248813700003666,
+      "query_processing_seconds": 1.6872601169998234
+    },
+    {
+      "question": "Phụ cấp ăn trưa hàng tháng là bao nhiêu?",
+      "retrieval_seconds": 0.06522493899683468,
+      "reranking_seconds": 0.3008536329980416,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.634681808998721,
+      "query_processing_seconds": 2.000777310000558
+    },
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày phép năm?",
+      "retrieval_seconds": 0.053336925000621704,
+      "reranking_seconds": 0.22349771200242685,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 0.9494493120000698,
+      "query_processing_seconds": 1.2262984959997993
+    },
+    {
+      "question": "Thâm niên bao nhiêu năm thì được cộng thêm ngày phép?",
+      "retrieval_seconds": 0.07152998899982776,
+      "reranking_seconds": 0.3264363839989528,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.2390108709987544,
+      "query_processing_seconds": 1.636992988998827
+    },
+    {
+      "question": "Mật khẩu phải có tối thiểu bao nhiêu ký tự?",
+      "retrieval_seconds": 0.05249816300056409,
+      "reranking_seconds": 0.28948729900002945,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 0.9898162829995272,
+      "query_processing_seconds": 1.331819995000842
+    },
+    {
+      "question": "Bao lâu phải đổi mật khẩu một lần?",
+      "retrieval_seconds": 0.0544712230002915,
+      "reranking_seconds": 0.37120375399899785,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.0084549959974538,
+      "query_processing_seconds": 1.4341536700012512
+    },
+    {
+      "question": "Có cần kích hoạt xác thực đa yếu tố (MFA) không?",
+      "retrieval_seconds": 0.056301697997696465,
+      "reranking_seconds": 0.4175525930004369,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.1378246929998568,
+      "query_processing_seconds": 1.6116950760006148
+    },
+    {
+      "question": "Nhân viên thử việc có được nghỉ phép năm không?",
+      "retrieval_seconds": 0.03895768499933183,
+      "reranking_seconds": 0.18870858700029203,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.1307147950028593,
+      "query_processing_seconds": 1.3583961020012794
+    },
+    {
+      "question": "Khi phát hiện malware trên máy, nhân viên có nên tự xử lý không?",
+      "retrieval_seconds": 0.035039002999837976,
+      "reranking_seconds": 0.44061895000049844,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.1607794880001165,
+      "query_processing_seconds": 1.6364532330007933
+    },
+    {
+      "question": "Nhân viên thử việc có được hưởng bảo hiểm sức khỏe PVI không?",
+      "retrieval_seconds": 0.042404283998621395,
+      "reranking_seconds": 0.3306699189997744,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.0593181759977597,
+      "query_processing_seconds": 1.4324104049992457
+    },
+    {
+      "question": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+      "retrieval_seconds": 0.04080925400194246,
+      "reranking_seconds": 0.27748381899800734,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.3234955230000196,
+      "query_processing_seconds": 1.6418021659992519
+    },
+    {
+      "question": "Nếu cần mua một chiếc laptop 30 triệu cho nhân viên mới, ai phê duyệt và cần gì từ phòng CNTT?",
+      "retrieval_seconds": 0.04090773800271563,
+      "reranking_seconds": 0.46447961100057,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.5414498270001786,
+      "query_processing_seconds": 2.04686947799928
+    },
+    {
+      "question": "Nhân viên được tài trợ khóa học 25 triệu, nghỉ việc sau 8 tháng hoàn thành khóa học. Phải hoàn trả bao nhiêu?",
+      "retrieval_seconds": 0.04971376300090924,
+      "reranking_seconds": 0.4309890930016991,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.1576669159985613,
+      "query_processing_seconds": 1.6383881379988452
+    },
+    {
+      "question": "Mentor và buddy của nhân viên mới có thể là cùng một người không? Quản lý trực tiếp có thể làm mentor không?",
+      "retrieval_seconds": 0.0464983720012242,
+      "reranking_seconds": 0.3755018049996579,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.111649843001942,
+      "query_processing_seconds": 1.5336698169994634
+    },
+    {
+      "question": "Muốn mua thiết bị trị giá 55 triệu cần ai phê duyệt?",
+      "retrieval_seconds": 0.03039267500207643,
+      "reranking_seconds": 0.40937460900022415,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 0.9936183530007838,
+      "query_processing_seconds": 1.4334005239979888
+    },
+    {
+      "question": "Nhân viên tạm ứng 15 triệu, sau 20 ngày mới thanh toán. Bị phạt bao nhiêu?",
+      "retrieval_seconds": 0.021765045003121486,
+      "reranking_seconds": 0.43682364400228835,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 2.3808801140003197,
+      "query_processing_seconds": 2.839482687999407
+    },
+    {
+      "question": "Lương thử việc của nhân viên Junior mức cao nhất là bao nhiêu?",
+      "retrieval_seconds": 0.02797373300199979,
+      "reranking_seconds": 0.39830481600074563,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.3202554970011988,
+      "query_processing_seconds": 1.7465518830031215
+    },
+    {
+      "question": "Thông tin lương thuộc cấp độ phân loại dữ liệu nào?",
+      "retrieval_seconds": 0.03541585499988287,
+      "reranking_seconds": 0.32036034500197275,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.103903156999877,
+      "query_processing_seconds": 1.459696989000804
+    },
+    {
+      "question": "Nghỉ phép không lương 20 ngày cần ai phê duyệt?",
+      "retrieval_seconds": 0.03678549600226688,
+      "reranking_seconds": 0.27029536000191,
+      "reranker_load_seconds": 0.0,
+      "answer_generation_seconds": 1.1779032619997452,
+      "query_processing_seconds": 1.484998624000582
+    }
+  ],
+  "build_stages": {
+    "chunking": 0.13170911999986856,
+    "enrichment": 243.69601788900036,
+    "indexing": 22.49719293599992,
+    "reranker_load": 7.909065617001033
+  },
+  "notes": [
+    "query_processing is end-to-end and overlaps the retrieval, reranking, and answer_generation subtotals.",
+    "reranker_load is reported separately; the first query end-to-end time includes this cold start."
+  ]
+}
